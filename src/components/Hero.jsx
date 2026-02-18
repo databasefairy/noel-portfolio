@@ -41,13 +41,15 @@ const Hero = () => {
                     I bridge the gap between complex engineering and business strategy to build scalable, user-centric solutions that drive operational excellence.
                 </p>
 
-                <motion.button
+                <motion.a
+                    href="/noel_resume.pdf"
+                    download="Noel_Hollis_Ringstad_Resume.pdf"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="btn-primary"
                 >
                     Download My Resume
-                </motion.button>
+                </motion.a>
             </motion.div>
         </section>
     );
