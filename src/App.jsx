@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import Contact from './components/Contact';
 import SectionFeed from './components/SectionFeed';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
 
       <main className="relative z-10">
         <Hero />
+        <Contact />
         <About />
         <SectionFeed id="articles" title="My" subtitle="Articles" />
         <SectionFeed id="projects" title="My" subtitle="Projects" />

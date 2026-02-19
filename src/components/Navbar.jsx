@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 
 const Navbar = () => {
     const navLinks = [
+        { name: 'Contact', href: '#contact' },
         { name: 'About', href: '#about' },
         { name: 'Articles', href: '#articles' },
         { name: 'Projects', href: '#projects' },
