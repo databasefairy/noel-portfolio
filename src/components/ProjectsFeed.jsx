@@ -8,10 +8,12 @@ const ProjectsFeed = ({ id, title, subtitle }) => {
         const fetchRepos = async () => {
             try {
                 // Fetching the 4 most recently updated repositories for the user 'databasefairy'
-                const response = await fetch('https://api.github.com/users/databasefairy/repos?sort=updated&per_page=4');
+                const response = await fetch('https://api.github.com/users/databasefairy/repos?sort=updated&per_page=10');
                 const data = await response.json();
                 if (Array.isArray(data)) {
-                    setRepos(data);
+                    // Filter out repos that have external homepage links, and slice to 4
+                    const pureGithubRepos = data.filter(repo => !repo.homepage).slice(0, 4);
+                    setRepos(pureGithubRepos);
                 } else {
                     console.error('Invalid response format', data);
                 }
