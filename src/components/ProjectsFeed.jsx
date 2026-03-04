@@ -11,9 +11,8 @@ const ProjectsFeed = ({ id, title, subtitle }) => {
                 const response = await fetch('https://api.github.com/users/databasefairy/repos?sort=updated&per_page=10');
                 const data = await response.json();
                 if (Array.isArray(data)) {
-                    // Filter out any repositories that have a custom homepage link
-                    const githubOnlyRepos = data.filter(repo => !repo.homepage);
-                    setRepos(githubOnlyRepos.slice(0, 6));
+                    // Display all fetched repositories without filtering by homepage
+                    setRepos(data);
                 } else {
                     console.error('Invalid response format', data);
                 }
