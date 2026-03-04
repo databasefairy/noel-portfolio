@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Contact from './components/Contact';
 import SectionFeed from './components/SectionFeed';
+import ProjectsFeed from './components/ProjectsFeed';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         <Contact />
         <About />
         <SectionFeed id="articles" title="My" subtitle="Articles" />
-        <SectionFeed id="projects" title="My" subtitle="Projects" />
+        <ProjectsFeed id="projects" title="My" subtitle="Projects" />
       </main>
 
       <footer className="py-24 px-12 lg:px-24 bg-obsidian text-center border-t border-mint/10 relative z-10">
