@@ -7,11 +7,13 @@ const ProjectsFeed = ({ id, title, subtitle }) => {
     useEffect(() => {
         const fetchRepos = async () => {
             try {
-                // Fetching the 4 most recently updated repositories for the user 'databasefairy'
-                const response = await fetch('https://api.github.com/users/databasefairy/repos?sort=updated&per_page=4');
+                // Fetch more repositories initially to account for filtered items
+                const response = await fetch('https://api.github.com/users/databasefairy/repos?sort=updated&per_page=10');
                 const data = await response.json();
                 if (Array.isArray(data)) {
-                    setRepos(data);
+                    // Filter out any repositories that have a custom homepage link
+                    const githubOnlyRepos = data.filter(repo => !repo.homepage);
+                    setRepos(githubOnlyRepos.slice(0, 6));
                 } else {
                     console.error('Invalid response format', data);
                 }
