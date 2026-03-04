@@ -49,18 +49,31 @@ const ProjectsFeed = ({ id, title, subtitle }) => {
                                     rel="noopener noreferrer"
                                     className="group flex flex-col gap-6 cursor-pointer"
                                 >
-                                    {/* Abstract Project Card Wrapper */}
+                                    {/* Project Card Wrapper */}
                                     <div className="relative w-full aspect-[21/9] overflow-hidden bg-mint/5 rounded-sm border border-mint/10 group-hover:border-gold transition-colors duration-300 flex flex-col justify-end p-6">
-                                        <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-transparent opacity-80 z-10" />
-
-                                        {/* A simple decorative pattern to represent the "project" aesthetic without an actual image cover */}
-                                        <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-20 transition-opacity bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-mint via-obsidian to-obsidian" />
+                                        {repo.name.toLowerCase().includes('mouser') ? (
+                                            <>
+                                                {/* Image Background specifically for Mouser */}
+                                                <img
+                                                    src="/mouser-cat-banner.png"
+                                                    alt="Mouser Project Cover"
+                                                    className="absolute inset-0 w-full h-full object-cover object-center z-0 grayscale group-hover:grayscale-0 opacity-80 group-hover:opacity-100 transition-all duration-500"
+                                                />
+                                                <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/60 to-transparent opacity-90 z-10" />
+                                            </>
+                                        ) : (
+                                            <>
+                                                {/* Abstract style for other repos without covers */}
+                                                <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-transparent opacity-80 z-10" />
+                                                <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-20 transition-opacity bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-mint via-obsidian to-obsidian" />
+                                            </>
+                                        )}
 
                                         <div className="relative z-20">
-                                            <h3 className="text-3xl font-serif text-mint/90 group-hover:text-gold transition-colors truncate">
+                                            <h3 className="text-3xl font-serif text-mint/90 group-hover:text-gold transition-colors truncate drop-shadow-md">
                                                 {repo.name}
                                             </h3>
-                                            <p className="text-mint/60 font-sans mt-2 line-clamp-2">
+                                            <p className="text-mint/60 font-sans mt-2 line-clamp-2 drop-shadow-md">
                                                 {repo.description || 'No description available for this repository.'}
                                             </p>
                                         </div>
