@@ -92,6 +92,16 @@ const ProjectsFeed = ({ id, title, subtitle }) => {
                                                 />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/60 to-transparent opacity-90 z-10" />
                                             </>
+                                        ) : repo.name.toLowerCase() === 'job-a-gatchi' ? (
+                                            <>
+                                                {/* Image Background specifically for Job-a-Gatchi */}
+                                                <img
+                                                    src="/job-a-gatchi-portfolio.png"
+                                                    alt="Job-a-Gatchi Project Cover"
+                                                    className="absolute inset-0 w-full h-full object-cover object-center z-0 grayscale group-hover:grayscale-0 opacity-80 group-hover:opacity-100 transition-all duration-500"
+                                                />
+                                                <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/60 to-transparent opacity-90 z-10" />
+                                            </>
                                         ) : (
                                             <>
                                                 {/* Abstract style for other repos without covers */}
